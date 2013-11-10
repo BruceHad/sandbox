@@ -1,0 +1,22 @@
+.navbar {
+    border-top: 10px solid black;
+    padding-top: 25px;
+    background:url('../img/stripe.png') repeat-x top left white;
+}
+
+.heading * {
+    font-family: 'Vollkorn',serif;
+    border: 1px solid red;
+}
+
+.heading h1 {
+    font-size: 3em;
+    font-weight: normal;
+    float:left;
+    margin:0 padding: 0;
+}
+
+.subheading {
+    float:left;
+    margin:0; padding:0;
+}
