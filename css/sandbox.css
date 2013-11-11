@@ -4,19 +4,45 @@
     background:url('../img/stripe.png') repeat-x top left white;
 }
 
-.heading * {
-    font-family: 'Vollkorn',serif;
-    border: 1px solid red;
+.heading {
+    font-family: 'Vollkorn', serif;  
+    width: 66.66666666666666%;
+    margin: 0 auto;
 }
 
 .heading h1 {
     font-size: 3em;
     font-weight: normal;
     float:left;
-    margin:0 padding: 0;
+    margin:0 0.5em; 
 }
 
 .subheading {
     float:left;
-    margin:0; padding:0;
+    margin:1.7em 0 0 0; 
 }
+
+/* Sandbox tiles
+------------------------------------*/
+.sandbox {
+    background-color: #ddd;
+}
+
+.item {
+    background-color: white;
+    min-height: 500px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 7.5px -11.25px;
+}
+
+
+.col:first-child .item{
+    margin-left: -7.5px;
+}
+
+.col:last-child .item {
+    margin-right: -7.5px;
+}
+
