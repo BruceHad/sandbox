@@ -30,7 +30,7 @@
 
 .item {
     background-color: white;
-    min-height: 500px;
+    height: 400px;
     overflow: auto;
     border: 1px solid #ccc;
     padding: 15px;

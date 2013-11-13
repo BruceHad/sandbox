@@ -54,6 +54,7 @@
     </div>
 
     <footer>
+        <p>Fais ce que tu veux.</p>
     </footer>
     <!--<script src="//code.jquery.com/jquery.js"></script>-->
     <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>-->
