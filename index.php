@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="shortcut icon" href="http://treerock.me/assets/favicon.ico" />
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Vollkorn:400italic,400" />
 
     <!-- Stylesheets -->
@@ -25,36 +25,27 @@
     <header class="navbar navbar-default clearfix">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="http://www.treerock.me/">Treerock</a>
+                <a class="navbar-brand" href="http://www.treerock.me/">Home</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#blog">Blog</a>
+                <li><a href="http://www.treerock.me/blog/">Blog</a>
                 </li>
-                <li><a href="#work">Work</a>
+                <li><a href="http://www.treerock.me/work/">Work</a>
                 </li>
-                <li class="active"><a href="#sandbox">Sandbox</a>
+                <li class="active"><a href="http://sandbox.treerock.me/">Sandbox</a>
                 </li>
             </ul>
         </div>
     </header>
 
     <div class="container main clearfix">
-        <div class="row heading clearfix">
-            <h1>Treerock</h1>
-            <p class="subheading">
-                Sandbox Projects
-                <br />Learning
-                <br />\ experiments
-            </p>
-        </div>
-
-        <div class="container clearfix sandbox">
-            <?php include('sandbox.php'); ?>
-        </div>
+        <?php include('project.php'); ?>
     </div>
 
     <footer>
-        <p>Fais ce que tu veux.</p>
+        <div class="container">
+            <p>Fais ce que tu veux.</p>
+        </div>
     </footer>
     <!--<script src="//code.jquery.com/jquery.js"></script>-->
     <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>-->

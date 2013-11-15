@@ -1,3 +1,14 @@
+<div class="row heading clearfix">
+    <h1>Treerock</h1>
+    <p class="subheading">
+        Sandbox Projects
+        <br />Learning
+        <br />\ experiments
+    </p>
+</div>
+
+<div class="container clearfix sandbox">
+
 <?php
 
 $sb_array = array(
@@ -34,4 +45,6 @@ for ($i=0; $i < count($sb_array); $i++){
         $template .= "</div><!-- row -->";
     }
     echo($template);
-}
+} ?>
+
+</div>

@@ -1,13 +1,11 @@
 .navbar {
     border-top: 10px solid black;
     padding-top: 25px;
-    background:url('../img/stripe.png') repeat-x top left white;
+    background:url('http://treerock.me/assets/stripe.png') repeat-x top left white;
 }
 
 .heading {
     font-family: 'Vollkorn', serif;  
-    width: 66.66666666666666%;
-    margin: 0 auto;
 }
 
 .heading h1 {

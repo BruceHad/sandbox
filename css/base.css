@@ -4,6 +4,12 @@
     /* padding-top:100px; Change for fixed width header */
     /*padding-top:50px;*/
 }
+footer {
+    margin-top: 15px;
+}
+.heading {
+    margin-bottom: 15px;
+}
 /* Hacks
 --------------------------------------------------------*/
  .clearfix:before, .clearfix:after {
@@ -39,6 +45,7 @@
     font-size: 18px;
     line-height: 20px;
     text-decoration: none;
+    font-weight: bold;
 }
 .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none;
