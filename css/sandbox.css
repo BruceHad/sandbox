@@ -53,6 +53,13 @@
     display: block;
 }
 
-.hide {
-    display:none;
+.section {
+    border: 5px solid red;
+    max-height: 800px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.section.hide {
+    max-height: 20px;
 }

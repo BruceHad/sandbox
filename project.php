@@ -8,7 +8,7 @@
 </div>
 
 <div ng-controller="ProjCntr" ng-app>
-    <div class="container sandbox" ng-class="{'hide': ! isActive('sandbox')}">
+    <div class="container sandbox clearfix" ng-class="{'hide': ! isActive('sandbox')}">
 <?php
 
 $sb_array = array(
@@ -50,10 +50,10 @@ for ($i=0; $i < count($sb_array); $i++){
     </div><!-- .sandbox -->
 
     <div class="show-more" ng-class="{'reveal': isJS()}">
-        <p><a href="#info" ng-click="switch()">{{message}}</a></p>
+        <p><a href="" ng-click="switch()">{{message}}</a></p>
     </div>
 
-    <div class="row meta" id="info" ng-class="{'hide': ! isActive('meta')}">
+    <div class="row meta section clearfix" id="info" ng-class="{'hide': ! isActive('meta')}">
         <div class="col col-6">
             <h2>About</h2>
             <p>About the sandbox</p>
