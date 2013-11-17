@@ -44,3 +44,15 @@
     margin-right: -7.5px;
 }
 
+/* Hide/reveal 
+-----------------------------------*/
+.show-more {
+    display: none;
+}
+.show-more.reveal {
+    display: block;
+}
+
+.hide {
+    display:none;
+}

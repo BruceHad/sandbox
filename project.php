@@ -7,8 +7,8 @@
     </p>
 </div>
 
-<div class="container clearfix sandbox">
-
+<div ng-controller="ProjCntr" ng-app>
+    <div class="container sandbox" ng-class="{'hide': ! isActive('sandbox')}">
 <?php
 
 $sb_array = array(
@@ -45,6 +45,24 @@ for ($i=0; $i < count($sb_array); $i++){
         $template .= "</div><!-- row -->";
     }
     echo($template);
-} ?>
+} 
+?>
+    </div><!-- .sandbox -->
 
-</div>
+    <div class="show-more" ng-class="{'reveal': isJS()}">
+        <p><a href="#info" ng-click="switch()">{{message}}</a></p>
+    </div>
+
+    <div class="row meta" id="info" ng-class="{'hide': ! isActive('meta')}">
+        <div class="col col-6">
+            <h2>About</h2>
+            <p>About the sandbox</p>
+        </div>
+        <div class="col col-6">
+            <h2>Meta</h2>
+            <p>Last updated around November 2013</p>
+            <h3>Log:</h3>
+            <p><a href="https://github.com/treerock/sandbox">Code on Github</a></p>
+        </div>
+    </div>
+</div><!-- .container -->

@@ -49,8 +49,8 @@
         </div>
     </footer>
     <!--<script src="//code.jquery.com/jquery.js"></script>-->
-    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>-->
-    <!--<script src="scripts/project.js"></script>-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="scripts/project.js"></script>
 </body>
 
 </html>
