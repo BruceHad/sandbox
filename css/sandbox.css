@@ -43,23 +43,3 @@
 .col:last-child .item {
     margin-right: -7.5px;
 }
-
-/* Hide/reveal 
------------------------------------*/
-.show-more {
-    display: none;
-}
-.show-more.reveal {
-    display: block;
-}
-
-.section {
-    border: 5px solid red;
-    max-height: 800px;
-    overflow: hidden;
-    transition: all 0.5s;
-}
-
-.section.hide {
-    max-height: 20px;
-}

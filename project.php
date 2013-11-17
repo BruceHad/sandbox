@@ -49,10 +49,6 @@ for ($i=0; $i < count($sb_array); $i++){
 ?>
     </div><!-- .sandbox -->
 
-    <div class="show-more" ng-class="{'reveal': isJS()}">
-        <p><a href="" ng-click="switch()">{{message}}</a></p>
-    </div>
-
     <div class="row meta section clearfix" id="info" ng-class="{'hide': ! isActive('meta')}">
         <div class="col col-6">
             <h2>About</h2>
