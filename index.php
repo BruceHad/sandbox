@@ -2,51 +2,34 @@
 <html>
 
 <head>
-    <title>Treerock Sandbox</title>
-
+    <title>Treerock - Sandbox</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://treerock.me/assets/favicon.ico" />
-   
-    <!-- Stylesheets -->
-    <link href="css/normalize.css" rel="stylesheet" />
-    <link href="css/base.css" rel="stylesheet" media="screen" />
-    <link href="css/sandbox.css" rel="stylesheet" media="screen" />
+    <link rel="shortcut icon" href="http://treerock.me/assets/favicon.ico">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/sandbox.css" rel="stylesheet" media="screen">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
+      <script src="http://treerock.me/assets/js/html5shiv.js"></script>
+      <script src="http://treerock.me/assets/js/respond.min.js"></script>
     <![endif]-->
 </head>
 
 <body>
-    <header class="navbar navbar-default clearfix">
+    <header class="section">
         <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="http://www.treerock.me/">Home</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="http://sandbox.treerock.me/">Sandbox</a>
-                </li>
-            </ul>
+        	<h1>Treerock</h1>
+        	<p class="sub"><span>Sandbox Projects</span></p>    
         </div>
     </header>
-
-    <div class="container main clearfix">
-        <div class="row heading clearfix">
-            <h1>Treerock</h1>
-            <p class="subheading">
-                Sandbox Projects
-                <br />Learning
-                <br />\ experiments
-            </p>
-        </div>
-        <div class="sandbox">
+	<div class="sandbox main section">
+        <div class="container">
 <?php
 
     $sb_array = array(
         array (
+        	"type"	  => "Web App",
             "name"    => "World Cup Sweep",
             "url"     => "//sandbox.treerock.me/projects/sweep/",
             "date"    => "2014-04-01",
@@ -56,6 +39,7 @@
             "repo"    => "//github.com/treerock/sweep"
         ),
         array (
+            "type"	  => "CSS Transitions",
             "name"    => "Sliding Boxes",
             "url"     => "//sandbox.treerock.me/projects/sliding-boxes/",
             "date"    => "2013-10-01",
@@ -64,6 +48,7 @@
             "version" => 1.0
         ),
         array (
+            "type"	  => "Web Technologies",
             "name"    => "Image Loading",
             "url"     => "//sandbox.treerock.me/projects/sb-image-loading/",
             "date"    => "2013-06-01",
@@ -74,28 +59,25 @@
             "version" => 0.1
         )
     );
-
-
-    for ($i=0; $i < count($sb_array); $i++){
+	for ($i=0; $i < count($sb_array); $i++){
         if($sb_array[$i]["status"] == "C"){
             $date_month = date('M-Y',strtotime($sb_array[$i]["date"]));
-            $template = "";
-            $template .= "<div class='item'>";
-            $template .= "<h1>".$sb_array[$i]["name"]."</h1>";
-            $template .= "<time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time>";
-            $template .= "<div class='sb-description'>".$sb_array[$i]["desc"]."</div>";
-            $template .= "<p><a href='".$sb_array[$i]["url"]."'>Link</a> | <a href='".$sb_array[$i]["repo"]."'>Repo</a></p>";
-            $template .= "</div>";
+            $template = 
+"<div class='item'>".
+	"<span>".$sb_array[$i]["name"]."</span>".
+    "<span><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></span>".
+    "<span><a href='".$sb_array[$i]["url"]."'>Link</a> | <a href='".$sb_array[$i]["repo"]."'>Repo</a></span>".
+"</div>";
             echo($template);
         }
     } 
-    ?>
-        </div>
-    </div><!-- .container -->
-
-    <footer>
+?>
+    	</div>
+    </div>
+    <footer class="section clearfix">
         <div class="container">
-            <p>Fais ce que tu veux.</p>
+        	<p>Fais ce que tu veux.</p>
+            <p>Hello</p>
         </div>
     </footer>
 </body>
