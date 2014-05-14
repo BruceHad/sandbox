@@ -63,10 +63,11 @@
         if($sb_array[$i]["status"] == "C"){
             $date_month = date('M-Y',strtotime($sb_array[$i]["date"]));
             $template = 
-"<div class='item'>".
-	"<span>".$sb_array[$i]["name"]."</span>".
-    "<span><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></span>".
-    "<span><a href='".$sb_array[$i]["url"]."'>Link</a> | <a href='".$sb_array[$i]["repo"]."'>Repo</a></span>".
+"<div class='item clearfix'>".
+    "<span class='i-type'>".$sb_array[$i]["type"]."</span>".
+	"<span class='i-name'><a href='".$sb_array[$i]["url"]."'>".$sb_array[$i]["name"]."</a></span>".
+    "<span class='i-time'><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></span>".
+    "<span class='i-links'><a href='".$sb_array[$i]["url"]."'>Link</a> | <a href='".$sb_array[$i]["repo"]."'>Repo</a></span>".
 "</div>";
             echo($template);
         }
@@ -77,7 +78,6 @@
     <footer class="section clearfix">
         <div class="container">
         	<p>Fais ce que tu veux.</p>
-            <p>Hello</p>
         </div>
     </footer>
 </body>

@@ -86,12 +86,27 @@ header small {
 }
 
 .item {
-    margin: 15px 0; 
+    color: #666;
+    line-height: 1.5;
+    border-bottom: 1px solid #ddd;
+}
+.item:first-child {
+    border-top: 1px solid #eee;
+}
+.i-name a{
+    display: block;
+    color:black;
+    text-decoration: none;
+}
+.i-name a:hover{
+    color:black;
+    text-decoration: underline;
 }
 .item span{
     display: block;
     float: left;
     width: 16.66%;
+    padding: 0 15px;
 }
 
 /* Full Width
@@ -100,7 +115,7 @@ header small {
 	/* Sandbox
 	 * */
     .item {
-        border: 1px solid red;
+        /*border: 1px solid red;*/
     }
 
 }
