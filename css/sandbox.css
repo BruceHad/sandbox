@@ -2,17 +2,17 @@
  * http://colourco.de/complement/5/%23622122
  * $color1: #1c4746; // Dark Blue
  * $color2: #1e5251; // Blue
- * $color3: #5c2021; // Dark Dark Red
- * $color4: #682223; // Med Dark Red
- * $color5: #732324; // Lighter Dark Red
  * */
 
 /* Hacks
 -----------------------------------------*/
 body {
     margin:0; padding: 0;
-    border-top: 5px solid #5c2021;
-    border-bottom: 5px solid #5c2021;
+    border-bottom: 10px solid #1c4746;
+    background: white url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
+    padding-top: 25px;
+    
+    min-width: 320px;
 } 
 .clearfix:before, .clearfix:after {
     content:"";
@@ -35,36 +35,44 @@ body {
 
 
 footer {
-    background-color: #732324;
+    background-color: #1c4746;
     color: white;
 }
 
-footer a {
-    color: white;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    outline: 1px dotted #999;
+    
 }
 
 .container {
-    margin: 0 15px;
+    margin: 0 5px;
 }
 
 /* Header
  * */
 
-header{
-    text-align: center;
-    color: #5c2021;
-}
-
 header h1, header p {
+    font-family: 'Vollkorn', sans-serif;
+    font-style: normal;
+    font-weight: 400;
     margin: 0; padding:0;
-    font-size:large;
-    line-height: 1.1;
+    text-align:center;
 }
 
 header h1 {
+    font-size: 64px;
     border-bottom: 1px solid #5c2021;
-    padding:0.4em 0 1em 0;
-    margin-bottom: -0.6em;
+}
+
+header p {
+    font-size: 36px;
+    margin-top: -0.7em;
+    text-transform: uppercase;
 }
 
 .sub span{
@@ -72,42 +80,87 @@ header h1 {
     padding: 0 5px;
 }
 
-header p {
-	text-transform:uppercase;
+/* Nav
+ * */
+nav {
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #FFFFFF),
+        color-stop(1, #EEE)
+    );
+    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
+    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
+    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
+    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
+    background-image: linear-gradient(to bottom, #FFFFFF 0%, #EEE 100%);
+    height: 32px;
+    line-height: 31px;
 }
 
-header small {
-    color: #666;
-    font-size: medium;
+nav ul {
+    list-style:none;
+    margin: 0; padding: 0;
 }
+
+nav li {
+    float: left;
+    width: 50%;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: small;
+    text-decoration: none;
+    border-left: 1px solid white;
+}
+
+/* Sandbox
+ * */
 
 .sandbox {
     margin: 30px 0;
 }
 
 .item {
-    color: #666;
-    line-height: 1.5;
+    color: #777;
     border-bottom: 1px solid #ddd;
 }
 .item:first-child {
-    border-top: 1px solid #eee;
-}
-.i-name a{
-    display: block;
-    color:black;
-    text-decoration: none;
-}
-.i-name a:hover{
-    color:black;
-    text-decoration: underline;
+    border-top: 1px solid #ddd;
 }
 .item span{
     display: block;
     float: left;
-    width: 16.66%;
-    padding: 0 15px;
+    padding: 0 5px;
 }
+
+.i-img {width: 5%}
+.i-type {width: 15%; text-align:center;}
+.i-name {width: 80%; color:black; font-weight: bold;}
+.i-desc {width: 80%; margin-left: 20%;}
+.i-tags {}
+.i-date {text-align: center;}
+.i-links {text-align: right;}
+.i-img, .i-type, .i-name, .i-desc {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.i-tags, .i-date, .i-links {
+    font-size: small;
+    margin-bottom: 5px;
+    width: 33.3333333%;
+}
+
+.i-type {
+    font-size: small;
+}
+
 
 /* Full Width
 -----------------------------------------*/
@@ -118,4 +171,4 @@ header small {
         /*border: 1px solid red;*/
     }
 
-}
+} 
