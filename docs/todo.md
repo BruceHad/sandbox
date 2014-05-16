@@ -1,0 +1,7 @@
+-[x] Merge img & type
+-[ ] Set max width for large screens.
+-[ ] Create 'flash' img for items
+-[ ] Create logo for Treerock
+-[ ] Split sandbox.css and base.css
+-[ ] 
+-[ ] 

@@ -77,13 +77,14 @@
             $desc = substr($desc, 0, 50)."&hellip;";
             $template = 
 "<div class='item clearfix'>".
-    "<span class='i-img'>&#46507;</span>".
-    "<span class='i-type'>".$sb_array[$i]["type"]."</span>".
-	"<span class='i-name'><a href='".$sb_array[$i]["url"]."'>".$sb_array[$i]["name"]."&#8669;</a></span>".
-    "<span class='i-desc'>".$desc."</span>".
-    "<span class='i-tags'>".$sb_array[$i]["tags"]."</span>".
-    "<span class='i-date'><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></span>".
-    "<span class='i-links'><a href='".$sb_array[$i]["repo"]."'>Github&#8669;</a></span>".
+    "<div class='i-type'>&#46507; ".$sb_array[$i]["type"]."</div>".
+	"<div class='i-name'>".
+   		"<p><a href='".$sb_array[$i]["url"]."'>".$sb_array[$i]["name"]."&#8669;</a></p>".
+	    "<p>".$desc."</p>".
+    "</div>".
+   	"<div class='i-tags'>".$sb_array[$i]["tags"]."</div>".
+    "<div class='i-date'><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></div>".
+    "<div class='i-links'><a href='".$sb_array[$i]["repo"]."'>Github&#8669;</a></div>".
 "</div>";
             echo($template);
         }

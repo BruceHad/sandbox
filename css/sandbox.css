@@ -132,33 +132,27 @@ nav a {
 .item:first-child {
     border-top: 1px solid #ddd;
 }
-.item span{
-    display: block;
-    float: left;
-    padding: 0 5px;
+.item p {
+    margin: 0; padding:0;
+    line-height: 1.2;
 }
 
-.i-img {width: 5%}
-.i-type {width: 15%; text-align:center;}
-.i-name {width: 80%; color:black; font-weight: bold;}
-.i-desc {width: 80%; margin-left: 20%;}
-.i-tags {}
+.i-type {float: left; width: 90px; font-size: small; margin-top: 5px;}
+.i-name {margin: 5px 0 5px 90px;}
+.i-tags {text-align: left;}
 .i-date {text-align: center;}
 .i-links {text-align: right;}
-.i-img, .i-type, .i-name, .i-desc {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    line-height: 1.1;
+
+.i-name a {
+    color: black;
+    font-weight: bold;
 }
 
 .i-tags, .i-date, .i-links {
+    float:left;
     font-size: small;
     margin-bottom: 5px;
     width: 33.3333333%;
-}
-
-.i-type {
-    font-size: small;
 }
 
 
