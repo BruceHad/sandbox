@@ -1,18 +1,11 @@
 /* 
  * http://colourco.de/complement/5/%23622122
- * $color1: #1c4746; // Dark Blue
- * $color2: #1e5251; // Blue
+ * $color1: #143937; // Dark Blue
+ * $color2: #45bea7; // Blue
  * */
 
 /* Hacks
------------------------------------------*/
-body {
-    margin:0; padding: 0;
-    border-bottom: 10px solid #1c4746;
-    background: white url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
-    padding-top: 25px;
-    min-width: 320px;
-} 
+-----------------------------------------*/ 
 .clearfix:before, .clearfix:after {
     content:"";
     display: table;
@@ -32,9 +25,17 @@ body {
 /* Basics
  * */
 
+ body {
+    margin:0; padding: 0;
+    border-top: 5px solid #143937;
+    background: white url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
+    padding-top: 25px;
+    min-width: 320px;
+}
+
 
 footer {
-    background-color: #1c4746;
+    background-color: #143937;
     color: white;
 }
 
@@ -66,7 +67,7 @@ header h1, header p {
 
 header h1 {
     font-size: 64px;
-    border-bottom: 1px solid #5c2021;
+    border-bottom: 1px solid #1c4746;
 }
 
 header p {
@@ -83,18 +84,21 @@ header p {
 /* Nav
  * */
 nav {
+    background-color: #f5f5ff;
+}
+nav li{
     background-image: -webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #FFFFFF),
-        color-stop(1, #EEE)
+        color-stop(0, #f5f5ff),
+        color-stop(1, #d8f2f3)
     );
-    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
-    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
-    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
-    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #EEE 100%);
-    background-image: linear-gradient(to bottom, #FFFFFF 0%, #EEE 100%);
+    background-image: -o-linear-gradient(bottom, #f5f5ff 0%, #d8f2f3 100%);
+    background-image: -moz-linear-gradient(bottom, #f5f5ff 0%, #d8f2f3 100%);
+    background-image: -webkit-linear-gradient(bottom, #f5f5ff 0%, #d8f2f3 100%);
+    background-image: -ms-linear-gradient(bottom, #f5f5ff 0%, #d8f2f3 100%);
+    background-image: linear-gradient(to bottom, #f5f5ff 0%, #d8f2f3 100%);
     height: 32px;
     line-height: 31px;
 }
@@ -106,7 +110,12 @@ nav ul {
 
 nav li {
     float: left;
-    width: 50%;
+    width: 33.33%;
+    border-left: 1px solid white;
+}
+
+nav li:first-child{
+    border:0;
 }
 
 nav a {
@@ -115,8 +124,26 @@ nav a {
     text-transform: uppercase;
     font-size: small;
     text-decoration: none;
-    border-left: 1px solid white;
+    
 }
+
+
+
+
+
+/* Full Width
+-----------------------------------------*/
+@media (min-width: 768px){
+	/* Sandbox
+	 * */
+    .container {
+        margin: 0 auto;
+    }
+    .item {
+        /*border: 1px solid red;*/
+    }
+
+} 
 
 /* Sandbox
  * */
@@ -126,18 +153,26 @@ nav a {
 }
 
 .item {
-    color: #777;
-    border-bottom: 1px solid #ddd;
+    color: #143937;
+    border-bottom: 1px solid #45bea7;
+    padding: 0 2px;
 }
 .item:first-child {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid #45bea7;
 }
 .item p {
     margin: 0; padding:0;
     line-height: 1.2;
 }
 
-.i-type {float: left; width: 90px; font-size: small; margin-top: 5px;}
+.i-type {
+    float: left; 
+    width: 90px; 
+    font-size: small; 
+    padding-top: 5px; 
+    padding-left: 20px;
+    background: white url('../images/mark.png') no-repeat top left;
+}
 .i-name {margin: 5px 0 5px 90px;}
 .i-tags {text-align: left;}
 .i-date {text-align: center;}
@@ -154,18 +189,3 @@ nav a {
     margin-bottom: 5px;
     width: 33.3333333%;
 }
-
-
-/* Full Width
------------------------------------------*/
-@media (min-width: 768px){
-	/* Sandbox
-	 * */
-    .container {
-        margin: 0 auto;
-    }
-    .item {
-        /*border: 1px solid red;*/
-    }
-
-} 

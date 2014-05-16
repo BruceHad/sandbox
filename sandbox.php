@@ -19,10 +19,13 @@
 
 <body>
     <nav class="clearfix">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Sandbox</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sandbox</a></li>
+            </ul>
+        </div>
     </nav>
     <header class="section">
         <div class="container">
@@ -77,7 +80,7 @@
             $desc = substr($desc, 0, 50)."&hellip;";
             $template = 
 "<div class='item clearfix'>".
-    "<div class='i-type'>&#46507; ".$sb_array[$i]["type"]."</div>".
+    "<div class='i-type'>".$sb_array[$i]["type"]."</div>".
 	"<div class='i-name'>".
    		"<p><a href='".$sb_array[$i]["url"]."'>".$sb_array[$i]["name"]."&#8669;</a></p>".
 	    "<p>".$desc."</p>".
