@@ -2,6 +2,6 @@
 -[x] Set max width for large screens.
 -[x] Create 'flash' img for items
 -[ ] Create logo for Treerock
--[ ] Split sandbox.css and base.css
--[ ] 
+-[x] Split sandbox.css and base.css
+-[ ] Set up home page. 
 -[ ] 
