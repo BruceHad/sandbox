@@ -46,7 +46,7 @@
             "name"    => "World Cup Sweep",
             "url"     => "//sandbox.treerock.me/projects/sweep/app/",
             "date"    => "2014-04-01",
-            "desc"    => "<p>Another <a href='http://www.angularjs.org/'>AngularJS</a>. This one a CRUD application for creating sweepstake style competitions, where a group of friend can pick teams (randomly) from some sporting event or something.</p>",
+            "desc"    => "<p>An <a href='http://www.angularjs.org/'>AngularJS</a> app for creating sweepstake style competitions, where a group of friend can pick teams (randomly) from some sporting event or something.</p>",
             "status"  => "C",
             "version" => 1.0,
             "repo"    => "//github.com/treerock/sweep"
@@ -62,15 +62,13 @@
             "version" => 1.0
         ),
         array (
-            "type"	  => "Technologies",
+            "type"	  => "Tech",
             "tags"	  => "html5, api",
             "name"    => "Image Loading",
-            "url"     => "//sandbox.treerock.me/projects/sb-image-loading/",
+            "url"     => "//sandbox.treerock.me/projects/imageload/",
             "date"    => "2013-06-01",
-            "desc"    => "<p>HTML5 included a <a href='http://www.w3.org/TR/FileAPI/'>File API</a> that provides access to local files.
-                          This makes it quite easy to quickly drag and drop images into a web application and manipulate them without having to upload them to the client.</p>
-                          <p>This version is a quick go at drag and drop.</p>",
-            "status"  => "IP", // In progress
+            "desc"    => "<p>HTML5 included a <a href='http://www.w3.org/TR/FileAPI/'>File API</a> that provides access to local files. This makes it quite easy to quickly drag and drop images into a web application and manipulate them without having to upload them to the client.</p><p>This version is a quick go at drag and drop.</p>",
+            "status"  => "C", // In progress
             "version" => 0.1
         )
     );
