@@ -44,7 +44,7 @@
         	"type"	  => "Web App",
             "tags"	  => "js, angular",
             "name"    => "World Cup Sweep",
-            "url"     => "//sandbox.treerock.me/projects/sweep/",
+            "url"     => "//sandbox.treerock.me/projects/sweep/app/",
             "date"    => "2014-04-01",
             "desc"    => "<p>Another <a href='http://www.angularjs.org/'>AngularJS</a>. This one a CRUD application for creating sweepstake style competitions, where a group of friend can pick teams (randomly) from some sporting event or something.</p>",
             "status"  => "C",
