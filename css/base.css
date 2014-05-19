@@ -29,7 +29,7 @@
     margin:0; padding: 0;
     border-top: 5px solid #143937;
     background: white url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
-    padding-top: 25px;
+    padding-top: 20px;
     min-width: 320px;
 }
 
@@ -106,7 +106,7 @@ nav li{
 
 nav ul {
     list-style:none;
-    margin: 0; padding: 0;
+    margin: 0 -5px; padding: 0;
 }
 
 nav li {
