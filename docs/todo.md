@@ -4,4 +4,13 @@
 -[ ] Create logo for Treerock
 -[x] Split sandbox.css and base.css
 -[ ] Set up home page. 
--[ ] 
+-[x] Add sweep link
+-[x] Add Image loading link.
+-[ ]
+-[ ]
+-[ ]
+-[ ]
+-[ ]
+-[ ]
+-[ ]
+-[ ]
