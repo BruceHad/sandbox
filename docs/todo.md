@@ -6,10 +6,10 @@
 -[ ] Set up home page. 
 -[x] Add sweep link
 -[x] Add Image loading link.
--[ ]
--[ ]
--[ ]
--[ ]
+-[ ] Set up news 
+-[x] Convert text to HTML and insert in template.
+-[ ] Convert Markdown to HTML
+-[ ] Convert RSS to HTML and insert in template.
 -[ ]
 -[ ]
 -[ ]
