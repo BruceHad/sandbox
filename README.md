@@ -1,1 +1,2 @@
-Markup for 'sandbox' project portfolio and associated template files.
+* Markup for 'sandbox' project portfolio and associated template files.
+* 'News' html generator.
