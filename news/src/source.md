@@ -1,3 +1,25 @@
+# 24/05/2014 15:00
+
+Testing out markdown.
+
+## Heading
+
+> Blockquote  
+> Blockquote 
+> Blockquote
+
+* One
+* Two
+
+More text
+
+    Code
+    Code
+
+Text
+
+-- Double dash &amp; ampersand.
+
 # 21/05/2014 12:41
 
 Compare:
@@ -40,4 +62,4 @@ It's a bit depressing. Here I am again, four years and two days later, with noth
 
 # 06/05/2013 12:00
 
-Statement of {Accomplishment](https://www.dropbox.com/s/lgw0tcmeubcyr5g/Coursera%20programming2%202014.pdf). Woot. Minor accomplishments are minor.
+Statement of [Accomplishment](https://www.dropbox.com/s/lgw0tcmeubcyr5g/Coursera%20programming2%202014.pdf). Woot. Minor accomplishments are minor.
