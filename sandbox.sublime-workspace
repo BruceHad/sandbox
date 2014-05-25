@@ -5,7 +5,7 @@
 		[
 			[
 				"mar",
-				"margin-left"
+				"margin-top"
 			],
 			[
 				"font-s",
@@ -384,64 +384,24 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n    <title>Treerock - Compile</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"shortcut icon\" href=\"http://treerock.me/assets/favicon.ico\">\n</head>\n\n<body>\n	<form action=\"scripts/compile.php\">\n		<button type=\"submit\">Compile</button>\n	</form>\n\n</body>\n\n</html>",
-			"file": "news/news.php",
-			"file_size": 367,
+			"contents": "<?php\n\ninclude('Parsedown.php');\n$template = \"../src/template.html\";\n$sources = array(\n    array(\n        \"path\" => \"../src/source.md\",\n        \"type\" => \"MD\")\n);\n\nforeach($sources as $source){\n    compile_source($source[\"path\"], $source[\"type\"]);\n}\n\nfunction compile_source($src, $type){\n    $handle = fopen($src, \"rb\") or die(\"Can't open file.\");\n    $file = fread($handle, filesize($src));\n    fclose($src);\n    if($type == \"MD\"){\n        $re = \"/\\d\\d\\/\\d\\d\\/\\d\\d\\d\\d \\d\\d:\\d\\d/\";\n        preg_match_all($re, $file, $matches, PREG_OFFSET_CAPTURE);\n        $matches = $matches[0];\n        $posts = array(); // and array of arrays of dates and content\n        for($i=0; $i<count($matches)-1; $i++){\n            $post_date = ($matches[$i][0]);\n            $content_start = $matches[$i][1]+16;\n            $content_end = $matches[$i+1][1]-2;\n            $length = $content_end - $content_start;\n            $content = substr($file, $content_start, $length);\n            $post = blog_post($post_date, $content);\n            array_push($posts, $post);\n        }\n        print_r($posts);\n    }\n}\n\n$filename = \"../src/source.md\";\n\n$output = \"../index.html\";\n\nif(!$handle = fopen($filename, 'rb')) {\n    die('Can\\'t open file, don\\'t know why');\n}\n\n$handle = fopen($filename, \"rb\");\n$file = fread($handle, filesize($filename));\nfclose($handle);\n\n$re = \"/\\d\\d\\/\\d\\d\\/\\d\\d\\d\\d \\d\\d:\\d\\d/\";\npreg_match_all($re, $file, $matches, PREG_OFFSET_CAPTURE);\n$matches = $matches[0];\n$page = array();\n\nfor($i=0; $i<count($matches)-1; $i++){\n    $post_date = ($matches[$i][0]);\n    $content_start = $matches[$i][1]+16;\n    $content_end = $matches[$i+1][1]-2;\n    $length = $content_end - $content_start;\n    $content = substr($file, $content_start, $length);\n    $post = blog_post($post_date, $content);\n    array_push($page, $post);\n}\n$page = array_map(\"tag_post\", $page);\n$html = render_posts($page);\ninsert_content($html, $template, $output);\n\n// print $html;\n//  header(\"Location: http://sandbox.treerock.me/projects/treerock/news.php\");\n//  die();\n\n/* Functions */\n\nfunction blog_post($post_date, $content, $source=\"treerock\"){\n    $Parsedown = new Parsedown();\n    $blog_post = array(\n        \"date\" => $post_date,\n        \"content\" => $Parsedown->text($content),\n        \"source\" => $source);\n    return $blog_post;\n}\n\nfunction tag_post($post){\n    $post[date] = \"<h2 class='post-date'>\".$post[date].\"</h2>\";\n    $post[content] = \"<div class='post-content'>\".$post[content].\"</div>\";\n    return $post;\n}\n\nfunction render_posts($page){\n    $html = \"\";\n    foreach($page as $post){\n        $post_html = \"<div class='row'>\";\n        $post_html .= \"<div class='col col-3'>\".$post[date].\"</div>\";\n        $post_html .= \"<div class='col col-9'>\".$post[content].\"</div>\";\n        $post_html .= \"</div>\";\n        $html .= $post_html;\n    }\n    return $html;\n}\nfunction insert_content($content, $template, $output){\n    $current = file_get_contents($template);    \n    $search = \"<content>Replace Me</content>\";\n    $new = str_replace($search, $content, $current);\n    file_put_contents($output, $new);\n}\n\n?>",
+			"file": "news/scripts/compile.php",
+			"file_size": 3142,
+			"file_write_time": 1401033775000000,
+			"settings":
+			{
+				"buffer_size": 3086,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "# News\n\nSimple blog-like template for displaying news and text posts.\n\nThe end product will be static web pages showing chronological news posts.\n\nData will be sourced from markdown text files and rss feeds and compiled into these news pages.\n\nThe problem is going to be how to scale it up. Don't want to regenerate the full site every time so need some method of 'only updating new stuff'.\n\n## Flow\n\nThere exists a compiled data file that stores the data in some kind of easily manipulated form (e.g. json).\n\nThe app \n\n1. Picks up all the source files\n2. Converts source files to consistent format.\n3. Compares source files to data file and inserts data.\n4. Re-generated html.\n5. Combines with template to output webpages.\n\n## Data File\n\n### Parsing MD\n\n\n\n",
+			"file": "docs/news.md",
+			"file_size": 609,
 			"file_write_time": 1400931740000000,
 			"settings":
 			{
-				"buffer_size": 367,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "news/src/template.html",
-			"settings":
-			{
-				"buffer_size": 1534,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "news/css/news.css",
-			"settings":
-			{
-				"buffer_size": 534,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "# 24/05/2014 15:00\n\nTesting out markdown.\n\n## Heading\n\n> Blockquote\n> Blockquote \n> Blockquote\n\n* One\n* Two\n\nMore text\n\n    Code\n    Code\n\nText\n\n-- Double dash &amp; ampersand.\n\n# 21/05/2014 12:41\n\nCompare:\n\n> I tend to build things 3 times, the first is sort of an exploration of the space, I fiddle around with usually just a bit of data and an extremely rudimentary UI to figure out what it is that I really want to build. Then when that’s sort of crystalized out I build the second version, one that lives for a while, days, weeks or months. This usually has actual use(rs) and maps out the space even further. Inevitably this turns up some really bad decisions made in the first or the second phase that were not apparent at the time. And so after a relatively short time the whole thing gets ripped apart again and then I build it in a way that it can last for a decade or longer while keeping the exterior unchanged as much as possible.\n>\n>--  [Jacques Mattheij](http://jacquesmattheij.com/choosing-web-framework-language-combo)\n\nWith:\n\n>It is toward the end of the second draft, if I'm lucky, when the feeling comes over me that I have something I want to show to other people, something that seems to be working and is not going away. The feeling is more than welcome, yes, but it is hardly euphoria. It's just a new lease on life, sense that I'm going to survive until the middle of next month. After reading the second draft aloud, and going through the piece for a third time (removing the tin horns and radio static that I heard while reading), I enclose things in boxes for Draft No. 4. If I enjoy anything in this process it is Draft No. 4...you draw a box not only around any word that does not seem quite right but also around words that fulfill their assignment but seem to present an opportunity.  \n>\n> -- [Draft No. 4](http://jsomers.net/mcphee-draft-no-4.pdf), John McFee\n\n# 20/05/2014 17:30\n\n[The Rules](http://www.kirit.com/On%20following%20rules): 1. Follow every rule you don't understand. 2. Only break rules you fully understand and have good reason to break.\n\n# 20/05/2014 15:49\n\nI’ve got a new [Sweep](http://sandbox.treerock.me/projects/sweep/app/) application up and running. It’s very basic, as was the plan. AngularJS is frustrating, but fun for developing applications like this. The two way binding is incredibly liberating. Beyond learning a framework, the main struggle was resolving some [race condition](https://en.wikipedia.org/wiki/Race_condition) type problems, which seems normal for javascript apps that are, by their nature, asynchronous.\n\n# 17/04/2014 11:56\n\n> Boredom and drudgery are evil.\n\nNot just bad, or annoying. Evil.\n\nAlso, a great tip for success.\n\n> Being something of a social outcast helps you stay concentrated on the really important things, like thinking and hacking.\n\n-- [How to be a Hacker](http://www.catb.org/esr/faqs/hacker-howto.html#believe3)\n\n# 17/04/2014 11:00\n\nRecently found a file dated 15/04/2010 documenting a nascent plan to become a programmer. It even laments the numerous, previous attempts and false starts and plans that had fallen by the wayside.\n\nIt's a bit depressing. Here I am again, four years and two days later, with nothing to show for it. I say nothing, but progress has been made. But not enough, and not fast enough.\n\n# 06/05/2013 12:00\n\nStatement of [Accomplishment](https://www.dropbox.com/s/lgw0tcmeubcyr5g/Coursera%20programming2%202014.pdf). Woot. Minor accomplishments are minor.\n",
-			"file": "news/src/source.md",
-			"file_size": 3488,
-			"file_write_time": 1400940240000000,
-			"settings":
-			{
-				"buffer_size": 3480,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "news/scripts/compile.php",
-			"settings":
-			{
-				"buffer_size": 2108,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/treerock/Projects/tools/bootstrap/dist/css/bootstrap.css",
-			"settings":
-			{
-				"buffer_size": 130571,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/sandbox.css",
-			"settings":
-			{
-				"buffer_size": 740,
+				"buffer_size": 757,
 				"line_ending": "Unix"
 			}
 		}
@@ -470,9 +430,15 @@
 	},
 	"file_history":
 	[
+		"/home/treerock/Projects/sweep/app/ajax/addTeam.php",
+		"/home/treerock/Projects/sandbox/css/sandbox.css",
+		"/home/treerock/Projects/tools/bootstrap/dist/css/bootstrap.css",
+		"/home/treerock/Projects/sandbox/news/src/source.md",
+		"/home/treerock/Projects/sandbox/news/src/template.html",
+		"/home/treerock/Projects/sandbox/news/news.php",
+		"/home/treerock/Projects/sandbox/news/css/news.css",
 		"/home/treerock/Projects/sandbox/news/src/file.1.md",
 		"/home/treerock/Projects/sandbox/css/base.css",
-		"/home/treerock/Projects/sandbox/css/sandbox.css",
 		"/home/treerock/Projects/sandbox/docs/todo.md",
 		"/home/treerock/Projects/sandbox/index.php",
 		"/home/treerock/Projects/sandbox/index.html",
@@ -492,7 +458,6 @@
 		"/home/treerock/Projects/sb-do-something/app/js/controllers.js",
 		"/home/treerock/Projects/sb-do-something/app/partials/partial1.html",
 		"/home/treerock/Projects/sweep/app/ajax/addGroup.php",
-		"/home/treerock/Projects/sweep/app/ajax/addTeam.php",
 		"/home/treerock/Projects/sweep/app/ajax/addUser.php",
 		"/home/treerock/Projects/sweep/app/ajax/db.php",
 		"/home/treerock/Projects/sweep/app/ajax/getComp.php",
@@ -592,12 +557,7 @@
 		"/home/treerock/Projects/do-something/scripts/project.txt",
 		"/home/treerock/Projects/do-something/project.txt",
 		"/home/treerock/Projects/do-something/index.php",
-		"/home/treerock/Projects/do-something/scripts/date.js",
-		"/home/treerock/Dropbox/Notes/Car/Car Notes.txt",
-		"/home/treerock/Projects/do-something/scripts/base64.js",
-		"/home/treerock/Dropbox/darkroom.txt",
-		"/home/treerock/Projects/sandbox/scripts/project.js",
-		"/home/treerock/Projects/sandbox/project.php"
+		"/home/treerock/Projects/do-something/scripts/date.js"
 	],
 	"find":
 	{
@@ -797,131 +757,23 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "news/news.php",
-					"settings":
-					{
-						"buffer_size": 367,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "news/src/template.html",
-					"settings":
-					{
-						"buffer_size": 1534,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "news/css/news.css",
-					"settings":
-					{
-						"buffer_size": 534,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								388,
-								388
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 22.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "news/src/source.md",
-					"settings":
-					{
-						"buffer_size": 3480,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								67,
-								67
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "news/scripts/compile.php",
 					"settings":
 					{
-						"buffer_size": 2108,
+						"buffer_size": 3086,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								938,
-								938
+								288,
+								288
 							]
 						],
 						"settings":
@@ -931,7 +783,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 145.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -943,54 +795,24 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
-					"file": "/home/treerock/Projects/tools/bootstrap/dist/css/bootstrap.css",
+					"buffer": 1,
+					"file": "docs/news.md",
 					"settings":
 					{
-						"buffer_size": 130571,
+						"buffer_size": 757,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								28458,
-								28458
+								242,
+								242
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 18.0,
-						"translation.y": 31213.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "css/sandbox.css",
-					"settings":
-					{
-						"buffer_size": 740,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								140,
-								140
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

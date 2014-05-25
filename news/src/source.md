@@ -4,7 +4,7 @@ Testing out markdown.
 
 ## Heading
 
-> Blockquote  
+> Blockquote
 > Blockquote 
 > Blockquote
 
