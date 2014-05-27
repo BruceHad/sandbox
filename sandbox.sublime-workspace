@@ -395,6 +395,14 @@
 			}
 		},
 		{
+			"file": "/home/treerock/virtualenvs/pelican/themes/treerock/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 3824,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"contents": "# News\n\nSimple blog-like template for displaying news and text posts.\n\nThe end product will be static web pages showing chronological news posts.\n\nData will be sourced from markdown text files and rss feeds and compiled into these news pages.\n\nThe problem is going to be how to scale it up. Don't want to regenerate the full site every time so need some method of 'only updating new stuff'.\n\n## Flow\n\nThere exists a compiled data file that stores the data in some kind of easily manipulated form (e.g. json).\n\nThe app \n\n1. Picks up all the source files\n2. Converts source files to consistent format.\n3. Compares source files to data file and inserts data.\n4. Re-generated html.\n5. Combines with template to output webpages.\n\n## Data File\n\n### Parsing MD\n\n\n\n",
 			"file": "docs/news.md",
 			"file_size": 609,
@@ -430,6 +438,17 @@
 	},
 	"file_history":
 	[
+		"/home/treerock/virtualenvs/pelican/themes/treerock/templates/index.html",
+		"/home/treerock/Projects/news/index.html",
+		"/home/treerock/virtualenvs/pelican/themes/treerock/static/css/main.css",
+		"/home/treerock/Projects/sandbox/news/content/source.1.md",
+		"/home/treerock/virtualenvs/pelican/news/pelicanconf.py",
+		"/home/treerock/virtualenvs/pelican/news/output/theme/css/main.css",
+		"/home/treerock/virtualenvs/pelican/news/Makefile",
+		"/home/treerock/Projects/sandbox/news/pelicanconf.py",
+		"/home/treerock/Projects/sandbox/news/publishconf.py",
+		"/home/treerock/virtualenvs/pelican/output/python-virtualenv-on-mac-osx-mountain-lion-10.8.html",
+		"/home/treerock/Projects/sandbox/source.md",
 		"/home/treerock/Projects/sweep/app/ajax/addTeam.php",
 		"/home/treerock/Projects/sandbox/css/sandbox.css",
 		"/home/treerock/Projects/tools/bootstrap/dist/css/bootstrap.css",
@@ -546,18 +565,7 @@
 		"/home/treerock/Projects/do-something/angular-seed/app/partials/partial1.html",
 		"/home/treerock/Projects/do-something/angular-seed/app/js/services.js",
 		"/home/treerock/Projects/do-something/angular-seed/app/js/app.js",
-		"/home/treerock/Projects/do-something/angular-seed/app/js/controllers.js",
-		"/home/treerock/Dropbox/dosomething.txt",
-		"/home/treerock/Projects/do-something/angular-seed/app/api.php",
-		"/home/treerock/Projects/do-something/auth.php",
-		"/home/treerock/Projects/do-something/project.php",
-		"/home/treerock/Projects/do-something/scripts/auth.js",
-		"/home/treerock/Projects/do-something/date.php",
-		"/home/treerock/Projects/do-something/scripts/project.js",
-		"/home/treerock/Projects/do-something/scripts/project.txt",
-		"/home/treerock/Projects/do-something/project.txt",
-		"/home/treerock/Projects/do-something/index.php",
-		"/home/treerock/Projects/do-something/scripts/date.js"
+		"/home/treerock/Projects/do-something/angular-seed/app/js/controllers.js"
 	],
 	"find":
 	{
@@ -757,7 +765,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -787,6 +795,34 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/treerock/virtualenvs/pelican/themes/treerock/templates/base.html",
+					"settings":
+					{
+						"buffer_size": 3824,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		},
@@ -795,7 +831,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 2,
 					"file": "docs/news.md",
 					"settings":
 					{
