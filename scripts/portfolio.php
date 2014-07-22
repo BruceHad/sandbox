@@ -26,19 +26,28 @@ $sb_array = csv_to_array('portfolio.txt');
 $template = "";
 for ($i=0; $i < count($sb_array); $i++){
 	if($sb_array[$i]["status"] == "C"){
-		$date_month = date('M-Y',strtotime($sb_array[$i]["date"]));
-		$desc = strip_tags($sb_array[$i]["desc"]);
-		$desc = substr($desc, 0, 100)."&hellip;";
+		$type = $sb_array[$i]["type"];
+		$url = $sb_array[$i]["url"];
+		$name = $sb_array[$i]["name"];
+// 		$desc = strip_tags($sb_array[$i]["desc"]); $desc = substr($desc, 0, 1000)."&hellip;";
+		$desc = $sb_array[$i]["desc"];
+		$tags = $sb_array[$i]["tags"];
+		$date = $sb_array[$i]["date"];
+		$date_month = date('M-Y',strtotime($date));
+		$repo = $sb_array[$i]["repo"];
+		$itype = "<div class='i-type'>".$type."</div>";
+		$iname = "<div class='i-name'><p><a href='".$url."'>".$name."&#8669;</a></p><div class='i-desc'>".$desc."</div></div>";
+		$itags = "<div class='i-tags'>".$tags."</div>";
+		$idate = "<div class='i-date'><time datetime='".$date."'>".$date_month."</time></div>";
+		if($repo == '') $irepo = "";
+		else $irepo = "<div class='i-links'><a href='".$repo."'>Github&#8669;</a></div>";
 		$temp = 
 			"<div class='item clearfix'>".
-			"<div class='i-type'>".$sb_array[$i]["type"]."</div>".
-			"<div class='i-name'>".
-			"<p><a href='".$sb_array[$i]["url"]."'>".$sb_array[$i]["name"]."&#8669;</a></p>".
-			"<p>".$desc."</p>".
-			"</div>".
-			"<div class='i-tags'>".$sb_array[$i]["tags"]."</div>".
-			"<div class='i-date'><time datetime='".$sb_array[$i]["date"]."'>".$date_month."</time></div>".
-			"<div class='i-links'><a href='".$sb_array[$i]["repo"]."'>Github&#8669;</a></div>".
+				$itype.
+				$iname.
+				$itags.
+				$idate.
+				$irepo.
 			"</div>";
 		$template .= $temp;
 	}
