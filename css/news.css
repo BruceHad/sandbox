@@ -1,0 +1,39 @@
+section {
+    margin-bottom: 100px;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+.content {
+    margin: 0 15px;
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.content a {
+    color: #1c4746;
+    text-decoration: underline;
+    outline: none;
+}
+
+.content a:hover {
+    text-decoration: none;
+}
+
+small {
+    color: #1e5251;
+    font-weight: normal;
+    font-size: small;
+}
+@media (min-width: 768px){
+    .col {
+        float: left;
+    }
+    .col-md-2 {
+        width: 16.66666%;
+    }
+    .col-md-10 {
+        width: 83.33333%;
+    }
+}
