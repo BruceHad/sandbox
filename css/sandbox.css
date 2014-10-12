@@ -43,3 +43,15 @@
     margin-bottom: 5px;
     width: 33.3333333%;
 }
+.i-desc p {
+	margin: 2px 0;
+	line-height: 1.3;
+}
+.i-desc a{
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.i-desc a:hover {
+	text-decoration: none;
+}

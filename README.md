@@ -1,2 +1,3 @@
-* Markup for 'sandbox' project portfolio and associated template files.
-* 'News' html generator.
+# Treerock Sandbox
+
+Basically just the source files for my portfolio pages.
