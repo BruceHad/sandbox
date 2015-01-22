@@ -18,12 +18,14 @@ body {
   padding: 0;
   border-top: 5px solid #143937;
   background: #143937 url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
+	color: white;
   padding-top: 20px;
   min-width: 320px;
 }
 
 header, #main {
 	background-color: white;
+	color: black;
 }
 footer {
   background-color: #143937;

@@ -49,8 +49,15 @@ for ($j = 0; $j < $count; $j++) {
 	$logArray[$j] = $d;
 }
 
-$logTemplate = "";
+// Sort by date descending
+// https://stackoverflow.com/questions/2699086/sort-multi-dimensional-array-by-value
+function sortByOrder($a, $b) {
+  return strtotime($b['date']) - strtotime($a['date']);
+}
+usort($logArray, 'sortByOrder');
+	
 // Convert array into text log.
+$logTemplate = "";
 for ($i = 0; $i < count($logArray); $i++){
 	$rec = $logArray[$i];
 	$row = "";

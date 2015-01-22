@@ -32,9 +32,11 @@
 	<div class="section grid grid-pad" id="main">
 		<div class="col-6-12">
 			<div class="content log">
-				<p><?php echo date('U');?>...</p>
-				<p>-------------</p>
-				<?php echo($logTemplate);	?>						
+				
+				<p>----------------</p>
+				<p>..<span style="text-decoration: blink">.</span></p>
+				<?php echo($logTemplate);	?>					
+				<p>----------------</p>
 			</div>
 		</div>
 		<div class="col-6-12 alt">
