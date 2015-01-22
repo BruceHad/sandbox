@@ -1,0 +1,317 @@
+.clearfix:before, .clearfix:after {
+  content:"";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin:0;
+  padding: 0;
+  border-top: 5px solid #143937;
+  background: #143937 url('http://www.treerock.me/assets/stripe.png') repeat-x top left;
+  padding-top: 20px;
+  min-width: 320px;
+}
+
+header, #main {
+	background-color: white;
+}
+footer {
+  background-color: #143937;
+  color: white;
+	border: 1px solid #143937; /* collapses margin or something */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover, a:active {
+  outline: 1px dotted #999;
+}
+.content {
+  margin: 0px;
+  padding: 10px;
+}
+header h1, header p {
+  font-family:'Vollkorn', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0;
+  padding:0;
+}
+header h1 {
+  font-size: 18px;
+  border-bottom: 1px solid #1c4746;
+  padding: 0.2em 0;
+}
+header p {
+  font-size: 16px;
+  margin-top: -0.7em;
+  text-transform: uppercase;
+  color: #143937;
+	text-align: center;
+}
+.sub span {
+  background-color: white;
+  padding: 0 5px;
+}
+
+
+.log {
+  font-family: monospace;
+}
+.log p {
+  line-height: 1;
+  margin:0;
+}
+
+.alt {
+	background-color: #224443;
+	color: white;
+}
+/* Full Width
+-----------------------------------------*/
+@media (min-width: 778px) {
+
+}
+/*
+  Simple Grid
+  Learn More - http://dallasbass.com/simple-grid-a-lightweight-responsive-css-grid/
+  Project Page - http://thisisdallas.github.com/Simple-Grid/
+  Author - Dallas Bass
+  Site - dallasbass.com
+*/
+ *, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  /* column-space */
+}
+.grid {
+  width: 100%;
+  max-width: 1140px;
+  min-width: 755px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.grid:after {
+  content:"";
+  display: table;
+  clear: both;
+}
+.grid-pad {
+  padding-top: 20px;
+  padding-left: 20px;
+  /* grid-space to left */
+  padding-right: 0px;
+  /* grid-space to right: (grid-space-left - column-space) e.g. 20px-20px=0 */
+}
+.push-right {
+  float: right;
+}
+/* Content Columns */
+ .col-1-1 {
+  width: 100%;
+}
+.col-2-3, .col-8-12 {
+  width: 66.66%;
+}
+.col-1-2, .col-6-12 {
+  width: 50%;
+}
+.col-1-3, .col-4-12 {
+  width: 33.33%;
+}
+.col-1-4, .col-3-12 {
+  width: 25%;
+}
+.col-1-5 {
+  width: 20%;
+}
+.col-1-6, .col-2-12 {
+  width: 16.667%;
+}
+.col-1-7 {
+  width: 14.28%;
+}
+.col-1-8 {
+  width: 12.5%;
+}
+.col-1-9 {
+  width: 11.1%;
+}
+.col-1-10 {
+  width: 10%;
+}
+.col-1-11 {
+  width: 9.09%;
+}
+.col-1-12 {
+  width: 8.33%
+}
+/* Layout Columns */
+ .col-11-12 {
+  width: 91.66%
+}
+.col-10-12 {
+  width: 83.333%;
+}
+.col-9-12 {
+  width: 75%;
+}
+.col-5-12 {
+  width: 41.66%;
+}
+.col-7-12 {
+  width: 58.33%
+}
+/* Pushing blocks */
+ .push-2-3, .push-8-12 {
+  margin-left: 66.66%;
+}
+.push-1-2, .push-6-12 {
+  margin-left: 50%;
+}
+.push-1-3, .push-4-12 {
+  margin-left: 33.33%;
+}
+.push-1-4, .push-3-12 {
+  margin-left: 25%;
+}
+.push-1-5 {
+  margin-left: 20%;
+}
+.push-1-6, .push-2-12 {
+  margin-left: 16.667%;
+}
+.push-1-7 {
+  margin-left: 14.28%;
+}
+.push-1-8 {
+  margin-left: 12.5%;
+}
+.push-1-9 {
+  margin-left: 11.1%;
+}
+.push-1-10 {
+  margin-left: 10%;
+}
+.push-1-11 {
+  margin-left: 9.09%;
+}
+.push-1-12 {
+  margin-left: 8.33%
+}
+@media handheld, only screen and (max-width: 767px) {
+  .grid {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 00px;
+    /* grid-space to left */
+    padding-right: 00px;
+    /* grid-space to right: (grid-space-left - column-space) e.g. 20px-10px=10px */
+  }
+  [class*='col-'] {
+    width: auto;
+    float: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 00px;
+    margin-bottom: 00px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
+    /* column-space */
+  }
+  /* Mobile Layout */
+  [class*='mobile-col-'] {
+    float: left;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 10px;
+    /* column-space */
+    padding-bottom: 0px;
+  }
+  .mobile-col-1-1 {
+    width: 100%;
+  }
+  .mobile-col-2-3, .mobile-col-8-12 {
+    width: 66.66%;
+  }
+  .mobile-col-1-2, .mobile-col-6-12 {
+    width: 50%;
+  }
+  .mobile-col-1-3, .mobile-col-4-12 {
+    width: 33.33%;
+  }
+  .mobile-col-1-4, .mobile-col-3-12 {
+    width: 25%;
+  }
+  .mobile-col-1-5 {
+    width: 20%;
+  }
+  .mobile-col-1-6, .mobile-col-2-12 {
+    width: 16.667%;
+  }
+  .mobile-col-1-7 {
+    width: 14.28%;
+  }
+  .mobile-col-1-8 {
+    width: 12.5%;
+  }
+  .mobile-col-1-9 {
+    width: 11.1%;
+  }
+  .mobile-col-1-10 {
+    width: 10%;
+  }
+  .mobile-col-1-11 {
+    width: 9.09%;
+  }
+  .mobile-col-1-12 {
+    width: 8.33%
+  }
+  /* Layout Columns */
+  .mobile-col-11-12 {
+    width: 91.66%
+  }
+  .mobile-col-10-12 {
+    width: 83.333%;
+  }
+  .mobile-col-9-12 {
+    width: 75%;
+  }
+  .mobile-col-5-12 {
+    width: 41.66%;
+  }
+  .mobile-col-7-12 {
+    width: 58.33%
+  }
+  .hide-on-mobile {
+    display: none !important;
+    width: 0;
+    height: 0;
+  }
+}

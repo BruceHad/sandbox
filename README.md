@@ -1,3 +1,3 @@
-# Treerock Sandbox
+# Treerock Log, Links and Sandbox
 
-Basically just the source files for my portfolio pages.
+Portofolio page

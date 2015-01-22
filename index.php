@@ -1,4 +1,6 @@
-<?php include("scripts/portfolio.php"); ?>
+<?php 
+	include("scripts/log.json.php"); 
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="http://treerock.me/assets/favicon.ico">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/sandbox.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,34 +21,35 @@
 </head>
 
 <body>
-    <nav class="clearfix">
-        <div class="container">
-            <ul>
-                <li><a href="//treerock.me/">Home</a></li>
-                <!-- <li><a href="#">News</a></li> -->
-                <li><a href="//sandbox.treerock.me/">Sandbox</a></li>
-            </ul>
-        </div>
-    </nav>
-    <header class="section">
-        <div class="container">
-        	<h1>Treerock</h1>
-        	<p class="sub"><span>Sandbox Projects</span></p>    
-        </div>
-    </header>
-    
-	<div class="sandbox main section">
-        <div class="container">
-<?php
-	echo($template);
-?>
-    	</div>
-    </div>
-    <footer class="section clearfix">
-        <div class="container">
-        	<p>Fais ce que tu veux.</p>
-        </div>
-    </footer>
+	
+	<header class="section">
+		<div class="content">
+			<h1>Treerock</h1>
+			<p class="sub"><span>Log</span></p>    
+		</div>
+	</header>
+	
+	<div class="section grid grid-pad" id="main">
+		<div class="col-6-12">
+			<div class="content log">
+				<p><?php echo date('U');?>...</p>
+				<p>-------------</p>
+				<?php echo($logTemplate);	?>						
+			</div>
+		</div>
+		<div class="col-6-12 alt">
+			<div class="content">
+				<p>Stuff written here.</p>
+			</div>
+		</div>
+	</div>
+	
+	<footer class="section">
+		<div class="content">
+			<p>Fais ce que tu veux.</p>
+		</div>
+	</footer>
+	
 </body>
 
 </html>
