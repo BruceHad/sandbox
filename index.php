@@ -24,25 +24,22 @@
 	
 	<header class="section">
 		<div class="content">
-			<h1>Treerock</h1>
-			<p class="sub"><span>Log</span></p>    
+			<h1><span>Treerock</span></h1>
+			<p class="sub">Sandbox, Log &amp; Portfolio</p>    
 		</div>
 	</header>
 	
-	<div class="section grid grid-pad" id="main">
-		<div class="col-6-12">
-			<div class="content log">
-				
-				<p>----------------</p>
-				<p>..<span style="text-decoration: blink">.</span></p>
-				<?php echo($logTemplate);	?>					
-				<p>----------------</p>
+	<div class="section row" id="main">
+		<div class="content portfolio">
+			<div class="item">
+				<h2><a href="https://treerock.github.io/myturtle/">Turtles and L-Systems</a></h2>
+				<p>An attempt at creating a <a href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics tool</a> and using it to draw <a href="https://en.wikipedia.org/wiki/L-system">L-Systems</a>. Javascript and Canvas.</p>
+				<img src=""
 			</div>
 		</div>
-		<div class="col-6-12 alt">
-			<div class="content">
-				<p>Stuff written here.</p>
-			</div>
+		<div class="content log">
+			<h2>Activity:</h2>
+			<?php echo($logTemplate);	?>					
 		</div>
 	</div>
 	

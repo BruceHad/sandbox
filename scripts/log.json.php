@@ -62,16 +62,14 @@ for ($i = 0; $i < count($logArray); $i++){
 	$rec = $logArray[$i];
 	$row = "";
 	$row .= $rec[date]." ";
-	$row .= " **".$rec[action]."** ";
+	$row .= $rec[name]." ";
+	$row .= $rec[action]." ";
 	if(validURL($rec[url])){
-		$row .= "<a href='".$rec[url]."'>".$rec[name]."</a>";
-	} else {
-		$row .= $rec[name]." ";
+		$row .= "(<a href='".$rec[url]."'>".link."</a>)";
 	}
 	if(validURL($rec[repoURL])){
-		$row .= " <a href='".$rec[repoURL]."'>github</a>";
+		$row .= "(<a href='".$rec[repoURL]."'>on github</a>)";
 	}
-	$row .= "...";
 	$logTemplate .= "<p>".$row."</p>".PHP_EOL; 
 }
 
