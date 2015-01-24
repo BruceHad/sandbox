@@ -1,5 +1,5 @@
-<?php 
-	include("scripts/log.json.php"); 
+<?php
+	include("scripts/log.json.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,34 +21,37 @@
 </head>
 
 <body>
-	
+
 	<header class="section">
 		<div class="content">
 			<h1><span>Treerock</span></h1>
-			<p class="sub">Sandbox, Log &amp; Portfolio</p>    
+			<p class="sub">Sandbox, Log &amp; Portfolio</p>
 		</div>
 	</header>
-	
+
 	<div class="section row" id="main">
-		<div class="content portfolio">
+		<div class="portfolio clearfix">
 			<div class="item">
-				<h2><a href="https://treerock.github.io/myturtle/">Turtles and L-Systems</a></h2>
-				<p>An attempt at creating a <a href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics tool</a> and using it to draw <a href="https://en.wikipedia.org/wiki/L-system">L-Systems</a>. Javascript and Canvas.</p>
-				<img src=""
-			</div>
-		</div>
+        <div class="content">
+  				<h2>Turtles and L-Systems</h2>
+  				<p>An attempt at creating a <a href="https://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics tool</a> and using it to draw <a href="https://en.wikipedia.org/wiki/L-system">L-Systems</a>. Javascript and Canvas.</p>
+        </div>
+				<img src="images/tree.gif">
+        <p class="link"><a href="https://treerock.github.io/myturtle/">Link</a></p>
+  		</div>
+    </div>
 		<div class="content log">
 			<h2>Activity:</h2>
-			<?php echo($logTemplate);	?>					
+			<?php echo($logTemplate);	?>
 		</div>
 	</div>
-	
+
 	<footer class="section">
 		<div class="content">
 			<p>Fais ce que tu veux.</p>
 		</div>
 	</footer>
-	
+
 </body>
 
 </html>

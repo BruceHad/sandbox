@@ -36,6 +36,7 @@ footer {
 }
 a {
   text-decoration: underline;
+  color: inherit;
 }
 a:hover, a:active {
   text-decoration: none;
@@ -91,3 +92,48 @@ header p {
 	border-bottom: 1px dashed white;
 	color: white;
 }
+
+.portfolio {
+  font-size: 0.875em;
+}
+.portfolio .item{
+  width: 200px; height: 200px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  margin: 20px;
+}
+.portfolio .content {
+  z-index: 100;
+  position: relative;;
+  margin: 10px;
+  height: 180px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.portfolio img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 50;
+}
+
+.portfolio h2 {
+  font-size: 1.25em;
+  text-align: center;
+  margin: 0; padding: 0;
+}
+.portfolio p {
+  text-align: justify;
+  margin: 0.4em 0;
+}
+.portfolio .link{
+  position: absolute;
+  left:0;
+  top: 160px;
+  z-index: 100;
+  text-align: right;
+  width: 100%;
+  padding: 0 20px;
+}
+
