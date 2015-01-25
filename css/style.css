@@ -46,6 +46,9 @@ a:hover, a:active {
   padding: 10px;
 }
 
+header {
+  /*border-top: 5px solid black;*/
+}
 header h1, header p {
   font-family:'Vollkorn', sans-serif;
   font-style: normal;
@@ -55,22 +58,18 @@ header h1, header p {
 }
 header h1 {
 	/* Background image is 25px high */
-  font-size: 18px;
+  font-size: 21px;
 	height: 25px;
   padding:0; margin: 0;
-	margin-top: -10px; /* Negate padding */
+	margin: -10px 0 0 0; /* Negate padding */
 }
 header h1 span {
-	height: 21px;
-	margin: 2px;
-	padding: 1px;
-	background-color: rgba(255, 255, 255, 0.65);
+	background-color: rgba(255, 255, 255, 0.7);
 }
 header p {
-  font-size: 16px;
+  font-size: 1.25em;
   text-transform: uppercase;
   color: #143937;
-	text-align: right;
 }
 
 
@@ -128,12 +127,24 @@ header p {
   margin: 0.4em 0;
 }
 .portfolio .link{
+
+  text-align: center;
   position: absolute;
-  left:0;
-  top: 160px;
+  left:10%; top: 155px;
   z-index: 100;
-  text-align: right;
-  width: 100%;
-  padding: 0 20px;
+  width: 80%;
+}
+
+.portfolio .link a {
+  display: block;
+  padding: 2.5px 0;
+  color: #143937;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.portfolio .link a:hover {
+  background-color: rgba(0,0,0, 0.5);
+  color: white;
 }
 
