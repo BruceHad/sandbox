@@ -58,9 +58,11 @@ usort($logArray, 'sortByOrder');
 	
 // Convert array into text log.
 $logTemplate = "";
-for ($i = 0; $i < count($logArray); $i++){
+$rows = 10;
+for ($i = 0; $i < $rows; $i++){
 	$rec = $logArray[$i];
 	$row = "";
+	$row .= str_pad(count($logArray) - $i, 4, "0", STR_PAD_LEFT)."|";
 	$row .= $rec[date]." ";
 	$row .= $rec[name]." ";
 	$row .= $rec[action]." ";

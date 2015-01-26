@@ -110,6 +110,15 @@ header p {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+.portfolio .content:hover {
+  z-index: 100;
+  position: relative;;
+  margin: 10px;
+  height: 180px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.75);
+}
 .portfolio img {
   position: absolute;
   left: 0;
